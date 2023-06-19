@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Quentin Rissons developpeur web et web mobile, à distance ou dans les région de l'Ain, du Jura et Rhône-alpes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sass.css">
+    <title>Mon portfolio</title>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <a id="accueil"></a>
+    <header>
+        <img src="images/code.jpg" alt="" class="blur">
+        <div class="txt">
+            <h1>Quentin</h1>
+            <h2>Développeur web <br> - <br> Intégrateur</h2>
+        </div>
+    </header>
+
+
+    <!-- profil -->
+    <a id="profil"></a>
+    <section>
+            <img src="images/téléchargement.jpg" alt="">
+            <h3>A Propos :</h3>
+            <p>Après plusieur années en restauration et divers types d'emplois, j'ai choisis de m'orienter vers le developpement web.</p>
+            <p>Orientation que j'ai commencé d'abord en autodidacte, puis via l'école en ligne Studi et ainsi continuer mon apprentissage avec online formapro</p>
+        <div class="actu">
+            <h3>Actuellement :</h3>
+            <p>En formation Developpeur web et web mobile</p>
+            <p>Chez Online Formapro</p>
+        </div>
+    </section>
+
+    <!-- compétences -->
+    <a id="compétences"></a>
+    <div class="container">
+        <h3>Compétences</h3>
+        <div class="slider">
+            <img src="images/bootstrap.png" alt="boot" class="active">
+            <img src="images/html.png" alt="html">
+            <img src="images/css.png" alt="css">
+            <img src="images/sass.png" alt="sass">
+            <img src="images/jscript.png" alt="">
+        </div>
+        <div class="cont-btn">
+            <img src="images/left.png" alt="" class="btn-nav right">
+            <img src="images/right.png" alt="" class="btn-nav left">
+        </div>
+    </div>
+
+    <!-- Projets -->
+    <a id="projets"></a>
+    <article>
+        <h3>Projets</h3>
+        <div class="containt-card">
+
+            <div class="card" onclick="afficher(0)">
+                <div class="mobile">
+                    <img src="images/figma.png" alt="">
+                </div>
+                <img src="images/figma.png" alt="">
+                <h4>Premier projet</h4>
+                <div class="texte">
+                   Découverte du logiciel Figma, le but etant de créer un site interactif.
+                </div>
+            </div>
+               
+            <div class="card" onclick="afficher(1)">
+                <div class="mobile">
+                    <img src="images/firstmob.png" alt="">
+                </div>
+                <img src="images/firstprojet.png" alt="">
+                <h4>Première intégration</h4>
+                <div class="texte">
+                    Première intégration d'une maquette via Figma en HTML/CSS en version desktop et mobile.
+                </div>
+            </div>
+    
+            
+            <div class="card" onclick="afficher(2)">
+                <div class="mobile">
+                    <img src="images/sassmob.png" alt="">
+                </div>
+                <img src="images/sassprojet.png" alt="">
+                <h4>Intégration SASS</h4>
+                <div class="texte">
+                    Le but de ce projet était d'intégré une maquette responsive via le préprocesseur SASS.
+                </div>
+            </div>
+
+            <div class="card" onclick="afficher(3)">
+                <div class="mobile">
+                    <img src="images/bootmob.png" alt="">
+                </div>
+                <img src="images/bootprojet.png" alt="">
+                <h4>Intégration Bootstrap</h4>
+                <div class="texte">
+                    Lors de cette intégration, il nous etait demandé d'intégré une maquette, toujours responsive, mais cette fois-ci via le Framework Bootstrap.
+                </div>
+            </div>
+
+            <div class="card" onclick="afficher(4)">
+                <div class="mobile">
+                    <img src="images/redesignmob.png" alt="">
+                </div>
+                <img src="images/redesignfigma.png" alt="">
+                <h4>Redesign Figma</h4>
+                <div class="texte">
+                    Redesign d'un site internet en se basant sur les tendances actuelles du web.
+                </div>
+            </div>
+
+            <div class="card" onclick="afficher(5)">
+                <div class="mobile">
+                    <img src="images/jsmob.png" alt="">
+                </div>
+                <img src="images/jsprojet.png" alt="">
+                <h4>Memory Game</h4>
+                <div class="texte">
+                    Création d'un Memory Game avec JavaScript/HTML/SASS.
+                </div>
+            </div>
+        
+        
+    </article>
+    <!-- Formulaire -->
+    <a id="contact"></a>
+    <div class="content">
+        <a href="#contact" onclick="form()">Me contacter</a>
+        <div class="boite">
+            <div class="element">
+                <form>
+                    <div>
+                        <h3>&lt;p&gt;Contactez-moi&lt;/p&gt;</h3>
+                    </div>
+                    <div>
+                        <p>&lt;input id="Firstname" name="Nom" type="text&gt;</p>
+                        <input id="Prenom" name="Prénom" type="text">
+                    </div>
+                    <div>
+                        <p>&lt;input id="name" name="Prénom" type="text&gt;</p>
+                        <input id="Prenom" name="Prénom" type="text">
+                    </div>
+                    <div>
+                        <p>&lt;input id="Email" name="Email" type="email&gt;</p>
+                        <input id="email" name="email" type="email">
+                    </div>
+                    <div>
+                        <p>&lt;input id="Téléphone" name="tel" type="tel&gt;</p>
+                        <input id="tel" name="tel" type="tel">
+                    </div>
+                    <div>
+                        <p>&lt;textarea name="objet" id="objet" cols="30" rows="10"&gt;</p>
+                        <textarea name="objet" id="objet" cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <p>&lt;input type="submit" value="Envoi"&gt;</p>
+                        <input type="submit" value="Envoi">
+                    </div>
+                  </form>
+            </div>
+            <img onclick="form()" src="images/cross-mark-gb46e1b636_640.png" alt="" class="close">
+        </div>
+    </div>
+
+    <!-- Item -->
+    <div class="item">
+        <div class="cube">
+            <a href="https://github.com/qrissons" target="_blank" class="face top"><img src="images/github-g60a074171_640.png" alt=""></a>
+            <a href="https://github.com/qrissons" target="_blank" class="face front"><img src="images/github-g60a074171_640.png" alt=""></a>
+            <a href="https://github.com/qrissons" target="_blank" class="face back"><img src="images/github-g60a074171_640.png" alt=""></a>
+            <a href="https://github.com/qrissons" target="_blank" class="face rightx"><img src="images/github-g60a074171_640.png" alt=""></a>
+            <a href="https://github.com/qrissons" target="_blank" class="face leftx"><img src="images/github-g60a074171_640.png" alt=""></a>
+            <a href="https://github.com/qrissons" target="_blank" class="face bottom"><img src="images/github-g60a074171_640.png" alt=""></a>
+         </div>
+         <div class="cube">
+            <a href="#accueil" class="face top"><img src="images/linkedin-g769b47dea_640.png" alt=""></a>
+            <a href="#accueil" class="face front"><img src="images/linkedin-g769b47dea_640.png" alt=""></a>
+            <a href="#accueil" class="face back"><img src="images/linkedin-g769b47dea_640.png" alt=""></a>
+            <a href="#accueil" class="face rightx"><img src="images/linkedin-g769b47dea_640.png" alt=""></a>
+            <a href="#accueil" class="face leftx"><img src="images/linkedin-g769b47dea_640.png" alt=""></a>
+            <a href="#accueil" class="face bottom"><img src="images/linkedin-g769b47dea_640.png" alt=""></a>
+         </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        </div>
+        <a href="#accueil">Accueil</a>
+        <a href="#profil">Profil</a>
+        <a href="#compétences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- colors -->
+   <div class="bouton">
+    <button onclick="red()" style="background: darkred;"></button>
+    <button onclick="green()" style="background: green;"></button>
+    <button onclick="dark()" style="background: black;"></button>
+    <button onclick="salmon()" style=" background: orangered;"></button>
+    <button onclick="yellow()" style="background: yellow;"></button>
+    <button onclick="white()" style="background: white;"></button>
+    <button onclick="pink()" style="background: violet;"></button>
+    <button onclick="blue()" style="background: blue;"></button>
+   </div>
+        
+ 
+
+</body>

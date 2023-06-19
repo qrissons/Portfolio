@@ -1,0 +1,73 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  width: 100vw;
+  text-align: center;
+  font-family: inter, sans-sérif;
+  font-size: 15px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+div {
+  width: 100%;
+  text-align: right;
+  margin: 5px;
+}
+
+h1 {
+  font-family: "Gravitas One", cursive;
+  text-align: left;
+  font-size: 60px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  width: 50%;
+}
+
+article {
+  color: whitesmoke;
+  background: gray;
+  width: 50%;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+h2 {
+  font-size: 60px;
+  font-family: inter, sans-sérif;
+}
+
+button {
+  color: #F1DEDE;
+  background: #bbacc1;
+  border-radius: 50px;
+  width: 202px;
+  height: 53px;
+  margin: 20px;
+  font-size: 17px;
+}
+
+footer {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+footer img {
+  width: 10%;
+}/*# sourceMappingURL=sass2.css.map */

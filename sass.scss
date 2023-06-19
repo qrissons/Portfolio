@@ -1,0 +1,494 @@
+$primary : #00244d;
+$secondary : #f5f5f5;
+// #00244d
+//#7e86f7
+
+
+@mixin background{
+    background: $primary;
+    color: $secondary;
+}
+
+@mixin reverseBackground{
+    color: $primary;
+    background: $secondary;
+}
+
+@mixin center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin size{
+    width: 100vw;
+    height: 100vh;
+}
+
+@mixin sizecent{
+    width: 100%;
+    height: 100%;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+
+body{
+    @include center();
+    @include flex();
+    font-family: 'VT323', monospace;
+    margin: 0;
+    color: $secondary;
+    overflow-x: hidden
+}
+
+
+// header
+header{
+    @include size();
+    @include flex();
+    font-size: 2.5rem;
+    img{
+        @extend header;
+        filter: blur(3px);
+    }
+    .txt{
+        @include center();
+        @extend header;
+        position: absolute;
+        animation: slide 3s forwards;
+    }
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+
+// profil
+@mixin box {
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: $secondary -10px -10px 20px;
+
+}
+section{
+    padding: 15px;
+    @include background();
+    @include size();
+    @include flex();
+    @include center();
+    font-size: 1.5rem;
+    border-radius: 20px;
+    img{
+        display: flex;
+        width: 20%;
+        border-radius: 10%;
+        box-shadow: rgb(236, 236, 236) 15px 15px 10px;
+    }
+    .actu{
+        box-shadow: inset $primary 0px 0px 150px;
+        @extend section;
+        @include reverseBackground();
+    }
+}
+
+
+
+// compétences
+.container{
+    @include background();
+    @include flex();
+    @include center();
+    @include size();
+}
+.slider{
+    @include sizecent();
+    @include box();
+    img{
+        border-radius: 20px;
+        @include sizecent();
+        display: none;
+    }
+}
+
+.cont-btn{
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    @include sizecent();
+    img{
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+img.active{
+    display: block;
+    animation: fade .8s;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+// Projets
+article{
+    @include center();
+    @include sizecent();
+    @include background();
+    .card{
+        cursor: pointer;
+        position: relative;
+        @include center();
+        @include flex();
+        @include sizecent();
+        img{
+            width: 80%;
+            height: 80%;
+        }
+    }
+}
+
+.card.actif{
+    animation: zoom 1s alternate forwards ease-in-out;
+}
+ 
+ @keyframes zoom{
+     0%{
+         width: 100%; 
+     }
+     50%{    
+         width: 120%;
+     }
+     100%{
+         width: 100%;
+     }
+}
+
+.mobile{
+    top: 2%;
+    right:0;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    display: none;
+}
+
+.mobile.active{
+    display: block ;
+    animation: frame 2s forwards alternate ease-in-out;
+}
+
+@keyframes frame{
+    from{
+        opacity: 0;
+        bottom: 100px;
+        right: 100px;
+
+    }
+    to{
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.texte{
+    @include flex();
+    display: none;
+    width: 100%;
+    height: 100%;
+    @include center();
+    @include background();
+}
+
+.texte.read{
+    display: block;
+}
+ 
+
+
+h4{
+    @include reverseBackground();
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+//Formulaire
+.content{
+    background-image: url(images/office-g568291982_1920.jpg);
+    @extend .container;
+    a{
+        @include box();
+        margin: 10px;
+        display: flex;
+        text-decoration: none;
+        @include background();
+        padding: 10px 30px;
+        border-radius: 6px;
+        transition: 0.5s;
+        width: 20%;
+        @include center();
+    }
+}
+
+a:hover{
+    letter-spacing: 5px;
+}
+
+.boite{
+    @include flex();
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.boite.form{
+    visibility: visible;
+    top: 50%;
+}
+
+.element{
+    @include center();
+    @include flex();
+    @include sizecent();
+    p{
+        @include center();
+        margin: 20px 0;
+    }
+}
+
+form{
+    border-radius: 50px;
+    box-shadow: whitesmoke 10px 10px 20px;
+    @extend .element;
+    background: #00244dea;
+}
+
+.close{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    cursor: pointer;
+}
+
+//Item
+.item{
+    width: 100%;
+    bottom: 0;
+    @include flex();
+    margin: 100px;
+    justify-content: center;
+    align-items: end;
+    position: fixed;
+    perspective: 1000px;
+    .cube{
+        margin: 20px;
+        transform-style: preserve-3d;
+        height: 5vh;
+        animation: spin 20s infinite linear;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.face{
+    width:50px;
+    height: 50px;
+    position: absolute;
+}
+
+.top{
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.bottom{
+    transform: rotateX(-90deg) translateZ(25px);
+}
+
+.rightx{
+    transform: rotatey(90deg) translateZ(25px);
+}
+
+.leftx{
+    transform: rotatey(-90deg) translateZ(25px);
+}
+
+.front{
+    transform: rotatex(0deg) translateZ(25px);
+}
+
+.back{
+    transform: rotatey(180deg) translateZ(25px);
+}
+@keyframes spin{
+    from{
+        transform: rotateX(0) rotateY(0);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+//Navbar
+nav{
+    @include background();
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    bottom: 0;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    a{
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        justify-content: space-around;
+    }
+}
+
+// color
+.bouton{
+    @include flex();
+    left: 0;
+    bottom: 10vh;
+    position: fixed;
+    button{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        animation: bouton infinite 2s alternate;
+    }
+}
+
+@keyframes bouton{
+    from{
+        transform: rotate(0);
+
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.green{
+    background: green;
+}
+.red{
+    background: darkred;
+}
+.dark{
+    background: #000;
+}
+.salmon{
+    background: salmon;
+}
+.yellow{
+    background: yellow;
+    color: #000;
+}
+.white{
+    background: white;
+    color: #000;
+}
+
+.pink{
+    background: violet;
+}
+
+.blue{
+    background: blue;
+}
+
+// Media Queries
+@media (min-width : 792px){
+
+    // profil
+    section{
+        width: 80%;
+    }
+
+    // compétences
+    .slider{
+        width: 90%;
+        height: 80%;
+    }
+    .cont-btn{
+        width: 100%;
+    }
+
+    // Projets
+    article{
+        @include sizecent();
+        .containt-card{
+            flex-wrap: wrap;
+            display: flex;
+            width: 100%;
+            .card{
+                width: 30%;
+            }
+        }
+    }
+
+    .card.actif{
+        animation: zoom2 1s alternate forwards ease-in-out;
+    }
+
+    @keyframes zoom2{
+        0%{
+            width: 30%; 
+        }
+        50%{    
+            width: 38%;
+        }
+        100%{
+            width: 30%;
+        }
+   }
+    .mobile{
+        width: 150px;
+        height: 200px;
+    }
+    
+    //Formulaire
+    .boite{
+        width: 90%;
+        height: 80%;
+    }
+
+}
+
